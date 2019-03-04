@@ -1,8 +1,8 @@
-var http = require("http");
+let http = require("http");
 const path = require('path');
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+let express = require('express');
+let app = express();
+let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 const layout = require('express-layout')
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,10 +21,10 @@ const fetchdata = require('./fetch_data');
 
  
 // Running Server Details.
-var server = app.listen( 8081, function () {
-  var host = server.address().address
-  var port = server.address().port
-  console.log("Example app listening at %s:%s Port", host, port);
+let server = app.listen( 8081, function () {
+  let host = server.address().address
+  let port = server.address().port
+  console.log("App listening at %s:%s Port", host, port);
 });
 
 app.set('views', path.join(__dirname, 'views'));
@@ -88,3 +88,7 @@ app.get('/datastream',  function( req, res ){
       console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
     }
 });
+
+
+
+
